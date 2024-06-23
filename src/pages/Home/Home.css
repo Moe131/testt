@@ -1,0 +1,138 @@
+.home {
+    padding: 0px 10px;
+    padding-bottom: 100px;
+}
+
+.hero {
+    max-width: 600px;
+    margin: 80px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap : 30px;
+
+    h1 {
+        font-size : 40px;
+    }
+
+    p {
+        width: 75%;
+        line-height: 1.5;
+    }
+
+    form {
+        padding : 8px;
+        width: 80%;
+        background-color: white;
+        border-radius: 5px;
+        font-size: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        input {
+            flex: 1;
+            font-size : 16px;
+            outline: none;
+            border: none;
+            padding-left: 10px;
+        }
+
+        button {
+            border: none;
+            background: rgb(54, 165, 130);
+            color: white;
+            font-size: 16px;
+            padding: 10px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
+}
+
+.crypto-table {
+    max-width: 800px;
+    margin: auto;
+    background-color: rgba(65, 211, 165, 0.344) ;
+    border-radius: 15px;
+}
+
+.table-layout {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1.5fr;
+    padding: 15px 20px;
+    align-items: center;
+    border-bottom: 1px solid white;
+    text-decoration: none;
+    color: white;
+
+
+    .market-cap {
+        text-align: right;
+    }
+
+    img {
+        max-width: 20px;
+    }
+    .logo-name {
+        display: flex;
+        gap : 5px;
+        }
+    .green {
+        color : greenyellow;
+    }
+    .red {
+        color : rgb(255, 93, 93);
+    }
+}
+
+.table-layout:last-child {
+        border:none;
+}
+
+
+@media (max-width: 600px){
+    .table-layout {
+        font-size: 12px;
+        grid-template-columns: 0.5fr 2fr 1fr 1fr 1.25fr;
+        padding: 7px 15px;
+    img {
+        width: 17px;
+    }
+  }
+  .home .hero {
+    margin : 50px auto;
+}
+}
+
+@media (max-width: 480px){
+    .table-layout {
+        font-size: 11px;
+        grid-template-columns: 0.5fr 3fr 1fr 1fr;
+    .market-cap {
+        display: none;
+    }
+    img {
+        width: 17px;
+    }
+    .green {
+        text-align: right;
+    }
+    .red {
+        text-align: right;
+    }
+    }
+    .hero h1 {
+        font-size : 35px;
+    }
+    .home .hero {
+        margin : 45px auto;
+    }
+    .home .hero button {
+        font-size: 13px;
+        padding: 5px 10px;
+        margin-right: auto;
+    }
+
+}

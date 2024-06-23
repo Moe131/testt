@@ -1,0 +1,13 @@
+{
+  "resourceName": "s35c128e46",
+  "policyUUID": "5c128e46",
+  "bucketName": "cryptofolioawsc8d2336548bf4e958b017ad914d757e1",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
