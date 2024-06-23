@@ -31,10 +31,11 @@ function Validate() {
                 username: formData.username,
                 confirmationCode: formData.code
               });
+              navigate ('/')
+
             } catch (error) {
               console.log('error confirming sign up', error);
         }
-        navigate ('/')
         
     }
 

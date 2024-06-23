@@ -48,12 +48,10 @@ function SignUp() {
                 autoSignIn: true // or SignInOptions e.g { authFlowType: "USER_SRP_AUTH" }
               }
             });
-        
-            console.log(userId);
+            navigate ('/validate')
           } catch (error) {
             console.log('error signing up:', error);
           }
-        navigate ('/validate')
     }
 
     return (

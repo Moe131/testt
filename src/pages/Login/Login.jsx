@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import "./Login.css";
+import { useNavigate } from "react-router-dom";
+import { signIn } from 'aws-amplify/auth';
+
 
 function Login() {
     const [formData, setFormData] = useState({
-        email: "",
+        username: "",
         password: ""
     });
+
+    const Navigate = useNavigate()
 
     const [submitted, setSubmitted] = useState(false);
 
@@ -17,10 +22,18 @@ function Login() {
         }));
     }
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
         // Here you would typically handle form submission, e.g., sending the data to a server
-        setSubmitted(true);
+        try {
+            const { isSignedIn, nextStep } = await signIn({ 
+                username : formData.username, 
+                password: formData.password });
+            Navigate('/home')
+          } catch (error) {
+            console.log('error signing in', error);
+          }
+
     }
 
     return (
@@ -34,12 +47,12 @@ function Login() {
             ) : (
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <label htmlFor="email">Email:</label>
+                        <label htmlFor="username">Username:</label>
                         <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            value={formData.email}
+                            type="text"
+                            id="username"
+                            name="username"
+                            value={formData.username}
                             onChange={handleChange}
                             required
                         />
